@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="limitAllocation" namespace="/limitAllocation" extends="struts-default">
+		<action name="limitAllocation.*" class="com.integrosys.focus.ui.limitAllocation.LimitAllocationAction" method="{1}">
+			<result name="success">limitAllocationPurposeDetailListing.jsp</result>
+		</action>		
+	</package>
+	
+	<package name="struts2jsonpoc" namespace="/" extends="struts-default">
+		<action name="strtus2jsonpoc.*" class="org.idotrick.struts2.json.ui.Struts2JsonPocAction" method="{1}">
+			<result name="success">/strtus2jsonpoc/editForm.jsp</result>
+		</action>		
+	</package>
+	
+	<package name="struts2jsonpocJSON" namespace="/ajax" extends="struts-default,json-default">
+		<action name="strtus2jsonpoc.*" class="org.idotrick.struts2.json.ui.Struts2JsonPocAction" method="{1}">
+			<result type="json"/>
+		</action>		
+	</package>	
+
+</struts>
